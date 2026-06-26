@@ -124,3 +124,14 @@ if uploaded_file is not None:
 
         fig = create_scatter_plot(df, x_col, y_col)
         st.plotly_chart(fig, use_container_width=True)
+
+        st.write("### Correlation Heatmap")
+
+        if len(numeric_columns) >= 2:
+
+            heatmap = create_heatmap(df)
+
+            st.plotly_chart(
+                heatmap,
+                use_container_width=True
+            )
